@@ -1,14 +1,16 @@
 import React from "react";
-import Item from "./Item";
 
-const List = ({ todos, index }) => {
+const List = ({ todos }) => {
   return (
-    <ul>
-      {todos.map((todo) => {
-        return <Item content={todo.content} key={index} />;
-      })}
-    </ul>
+    <React.Fragment>
+      <h3>やることリスト</h3>
+      <ul>
+        {todos.map((todo, index) => {
+          return <li key={index}>{todo.content}</li>;
+        })}
+      </ul>
+    </React.Fragment>
   );
 };
 
-export default List
+export default List;
